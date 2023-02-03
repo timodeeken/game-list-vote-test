@@ -58,11 +58,11 @@ if(!empty($_POST['post_value'])) {
         </div>
 
         <div class="bg-white p-6 rounded w-1/2 shadow-lg mb-5">
-            <h2>Installation Guid</h2>
+            <h2 class="text-2xl">Installation Guid</h2>
 
-            <h4>Step 1</h4>
+            <h4 class="text-md">Step 1</h4>
             <p class="italic text-gray-400">Request Vote Link from our API</p>
-            <div class="bg-gray-900 text-white">
+            <div class="bg-gray-900 text-white p-3">
                 <code lang="php">
                   <pre>
 $ch = curl_init();
