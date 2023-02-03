@@ -39,17 +39,18 @@ if($_POST) {
             <div>
                 Click on the button to get a test vote link
             </div>
+            <?php if(empty($result)){ ?>
             <form action="index.php" method="post">
                 <button type="submit" name="create_vote" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     Create Vote Link
                 </button>
             </form>
-            <?php
-                if (!empty($result)){
-                    print_r($result);
-                }
-            ?>
-
+            <?php } ?>
+            <?php if (!empty($result)){ ?>
+                <a  class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Vote Now
+                </a>
+            <?php } ?>
 
         </div>
     </div>
