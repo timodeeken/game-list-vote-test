@@ -11,7 +11,7 @@
 
 <?php
 $result = null;
-if($_POST) {
+if(!empty($_POST['post_value'])) {
     $ch = curl_init();
     $data = [
         'token' => 'kmTEmpnYu8IxPFFzDbFMxgdiPFIDXYyUcg5zUPVbQdvNzuJm1OguX3UiRPeV',
@@ -34,25 +34,29 @@ if($_POST) {
 ?>
 <body class="bg-gray-100">
     <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white p-6 rounded">
+        <div class="bg-white p-6 rounded w-1/2 shadow-lg mb-5">
             Welcome on GameList Vote Script Test
 
             <div>
                 Click on the button to get a test vote link
             </div>
             <?php if(empty($result)){ ?>
-            <form action="index.php" method="post">
+            <form action="/" method="post">
+                <input type="hidden" name="post_value" value="<?php echo random_bytes(20) ?>">
                 <button type="submit" name="create_vote" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     Create Vote Link
                 </button>
             </form>
             <?php } ?>
             <?php if (!empty($result)){ ?>
-                <a href="<?php echo $result->url ?>" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <a target="_blank" href="<?php echo $result->url ?>" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     Vote Now
                 </a>
             <?php } ?>
+        </div>
 
+        <div class="bg-white p-6 rounded w-1/2 shadow-lg mb-5">
+            <code>sjkfdhlkgdls</code>
         </div>
     </div>
 </body>
