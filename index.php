@@ -55,6 +55,13 @@ if(!empty($_POST['post_value'])) {
                     <a target="_blank" href="<?php echo $result->url ?>" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Vote Now
                     </a>
+                    <div class="bg-gray-900 text-white p-3 mb-5">
+                        <code lang="php">
+                  <pre>
+<?php print_r($result) ?>
+                  </pre>
+                        </code>
+                    </div>
                 <?php } ?>
             </div>
         </div>
@@ -88,7 +95,7 @@ $result = json_decode(curl_exec($ch));
             </div>
 
             <h4 class="text-md font-semibold mb-3">Step 2</h4>
-            <p class="italic text-gray-400">Redirect our User to our Vote Site</p>
+            <p class="italic text-gray-400">Redirect your User to our Vote Site</p>
             <div class="bg-gray-900 text-white p-3 mb-5">
                 <code lang="php">
                   <pre>
