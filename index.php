@@ -33,7 +33,7 @@ if(!empty($_POST['post_value'])) {
 
 ?>
 <body class="bg-gray-100">
-    <div class="min-h-screen flex items-center justify-center">
+    <div class="min-h-screen flex flex-col items-center justify-center">
         <div class="bg-white p-6 rounded w-1/2 shadow-lg mb-5">
             Welcome on GameList Vote Script Test
 
