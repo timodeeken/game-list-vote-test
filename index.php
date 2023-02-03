@@ -42,7 +42,7 @@ if(!empty($_POST['post_value'])) {
             <div>
                 Click on the button to get a test vote link
             </div>
-            <div class="w-64">
+            <div class="w-64 text-center">
                 <?php if(empty($result)){ ?>
                     <form action="/" method="post">
                         <input type="hidden" name="post_value" value="<?php echo random_bytes(20) ?>">
@@ -58,7 +58,7 @@ if(!empty($_POST['post_value'])) {
                 <?php } ?>
             </div>
             <?php if (!empty($result)){ ?>
-            <div class="bg-gray-900 text-white p-3 mb-5">
+            <div class="bg-gray-900 text-white p-3 mb-5 text-left">
                 <code lang="php">
                   <pre>
 <?php print_r($result) ?>
