@@ -29,6 +29,7 @@ if($_POST) {
 
     $result = curl_exec($ch);
     $result = json_decode($result);
+    print_r($result);
 }
 
 ?>
