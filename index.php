@@ -29,7 +29,6 @@ if($_POST) {
 
     $result = curl_exec($ch);
     $result = json_decode($result);
-    print_r($result);
 }
 
 ?>
@@ -49,7 +48,7 @@ if($_POST) {
             </form>
             <?php } ?>
             <?php if (!empty($result)){ ?>
-                <a href="<?php $result['url'] ?>" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <a href="<?php $result->url ?>" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     Vote Now
                 </a>
             <?php } ?>
