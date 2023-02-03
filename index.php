@@ -62,24 +62,25 @@ if(!empty($_POST['post_value'])) {
 
             <h4>Step 1</h4>
             <p class="italic text-gray-400">Request Vote Link from our API</p>
-            <code>
-                $ch = curl_init();
-                $data = [
-                'token' => 'SERVER_TOKEN',
-                'username' => 'USERNAME',
-                'return_url' => 'RETURN_URL'
-                ];
-                curl_setopt($ch, CURLOPT_URL, 'https://game-list.eu/v1/vote');
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-                curl_setopt($ch, CURLOPT_POST, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+            <code lang="php">
+                  <pre>
+$ch = curl_init();
+$data = [
+    'token' => 'SERVER_TOKEN',
+    'username' => 'USERNAME',
+    'return_url' => 'RETURN_URL'
+];
+curl_setopt($ch, CURLOPT_URL, 'https://game-list.eu/v1/vote');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
 
-                $headers = array();
-                $headers[] = 'Content-Type: application/x-www-form-urlencoded';
-                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$headers = array();
+$headers[] = 'Content-Type: application/x-www-form-urlencoded';
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-                $result = curl_exec($ch);
-                $result = json_decode($result);
+$result = json_decode(curl_exec($ch));
+                  </pre>
             </code>
         </div>
     </div>
