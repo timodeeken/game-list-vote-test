@@ -10,7 +10,7 @@
 </head>
 
 <?php
-$result = null;
+$result = '';
 if(!empty($_POST)) {
     $ch = curl_init();
     $data = [
@@ -31,9 +31,7 @@ if(!empty($_POST)) {
     $result = json_decode($result);
     print_r($result);
 }
-
 print_r($result);
-
 ?>
 <body class="bg-gray-100">
     <div class="min-h-screen flex flex-col items-center justify-center">
