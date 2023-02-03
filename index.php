@@ -28,6 +28,7 @@ if($_POST['create_vote']) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
     $result = curl_exec($ch);
+    print_r($result);
 }
 
 ?>
@@ -44,11 +45,7 @@ if($_POST['create_vote']) {
                     Create Vote Link
                 </button>
             </form>
-            <?php
-                if (!empty($result)){
-                    print_r($result);
-                }
-            ?>
+
 
 
         </div>
