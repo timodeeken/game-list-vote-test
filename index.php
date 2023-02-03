@@ -29,7 +29,7 @@ if(!empty($_POST)) {
 
     $result = curl_exec($ch);
     $result = json_decode($result);
-    print_r($result);
+    print_r(curl_error($ch));
 }
 print_r($result);
 ?>
