@@ -62,7 +62,8 @@ if(!empty($_POST['post_value'])) {
 
             <h4>Step 1</h4>
             <p class="italic text-gray-400">Request Vote Link from our API</p>
-            <code lang="php">
+            <div class="bg-gray-900 text-white">
+                <code lang="php">
                   <pre>
 $ch = curl_init();
 $data = [
@@ -81,7 +82,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $result = json_decode(curl_exec($ch));
                   </pre>
-            </code>
+                </code>
+            </div>
         </div>
     </div>
 </body>
