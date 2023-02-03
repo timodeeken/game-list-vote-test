@@ -11,7 +11,7 @@
 
 <?php
 $result = null;
-if(!empty($_POST['post_value'])) {
+if(!empty($_POST)) {
     $ch = curl_init();
     $data = [
         'token' => 'kmTEmpnYu8IxPFFzDbFMxgdiPFIDXYyUcg5zUPVbQdvNzuJm1OguX3UiRPeV',
@@ -44,7 +44,7 @@ if(!empty($_POST['post_value'])) {
             <div class="w-64 text-center mb-4">
                 <?php if(empty($result)){ ?>
                     <form action="/" method="post">
-                        <input type="hidden" name="post_value" value="<?php echo random_bytes(20) ?>">
+                        <input type="hidden" name="post_value" value="">
                         <div class="col-span-6 sm:col-span-3 mb-3">
                             <label for="first-name" class="block text-sm font-medium text-gray-700">Username</label>
                             <input type="text" name="username" id="username" autocomplete="given-name" class="mt-1 py-3 px-2 h-10 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required placeholder="GameList">
