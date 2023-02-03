@@ -29,6 +29,8 @@ if(!empty($_POST['post_value'])) {
 
     $result = curl_exec($ch);
     $result = json_decode($result);
+
+    print_r($result);
 }
 
 ?>
@@ -40,7 +42,7 @@ if(!empty($_POST['post_value'])) {
             <div>
                 Click on the button to get a test vote link
             </div>
-            <div class="w-32">
+            <div class="w-64">
                 <?php if(empty($result)){ ?>
                     <form action="/" method="post">
                         <input type="hidden" name="post_value" value="<?php echo random_bytes(20) ?>">
@@ -58,11 +60,11 @@ if(!empty($_POST['post_value'])) {
         </div>
 
         <div class="bg-white p-6 rounded w-1/2 shadow-lg mb-5">
-            <h2 class="text-2xl">Installation Guid</h2>
+            <h2 class="text-2xl font-bold mb-3">Installation Guid</h2>
 
-            <h4 class="text-md">Step 1</h4>
-            <p class="italic text-gray-400">Request Vote Link from our API</p>
-            <div class="bg-gray-900 text-white p-3">
+            <h4 class="text-md font-semibold mb-3">Step 1</h4>
+            <p class="italic text-gray-400">Request Vote Link from our API use CURL</p>
+            <div class="bg-gray-900 text-white p-3 mb-5">
                 <code lang="php">
                   <pre>
 $ch = curl_init();
@@ -84,6 +86,17 @@ $result = json_decode(curl_exec($ch));
                   </pre>
                 </code>
             </div>
+
+            <h4 class="text-md font-semibold mb-3">Step 2</h4>
+            <p class="italic text-gray-400">Redirect our User to our Vote Site</p>
+            <div class="bg-gray-900 text-white p-3 mb-5">
+                <code lang="php">
+                  <pre>
+header("Location: " . $result->url, true, 301);
+                  </pre>
+                </code>
+            </div>
+
         </div>
     </div>
 </body>
