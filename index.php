@@ -18,7 +18,7 @@ if(!empty($_POST['post_value'])) {
         'username' => $_POST['username'],
         'return_url' => 'google.de'
     ];
-    curl_setopt($ch, CURLOPT_URL, 'https://game-list.eu/v1/vote');
+    curl_setopt($ch, CURLOPT_URL, 'https://api.game-list.eu/v1/vote');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
@@ -85,7 +85,7 @@ $data = [
     'username' => 'USERNAME',
     'return_url' => 'RETURN_URL'
 ];
-curl_setopt($ch, CURLOPT_URL, 'https://game-list.eu/v1/vote');
+curl_setopt($ch, CURLOPT_URL, 'https://api.game-list.eu/v1/vote');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
