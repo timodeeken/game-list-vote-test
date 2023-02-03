@@ -30,7 +30,6 @@ if(!empty($_POST['post_value'])) {
     $result = curl_exec($ch);
     $result = json_decode($result);
 
-    print_r($result);
 }
 
 ?>
@@ -42,7 +41,7 @@ if(!empty($_POST['post_value'])) {
             <div>
                 Click on the button to get a test vote link
             </div>
-            <div class="w-64 text-center">
+            <div class="w-64 text-center mb-4">
                 <?php if(empty($result)){ ?>
                     <form action="/" method="post">
                         <input type="hidden" name="post_value" value="<?php echo random_bytes(20) ?>">
