@@ -6,8 +6,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+    <div class="min-h-screen flex items-center">
+        <div class="bg-white p-6">
+            Welcome on GameList Vote Script Test
+        </div>
+    </div>
 </body>
 </html>
