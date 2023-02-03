@@ -10,7 +10,7 @@
 </head>
 
 <?php
-
+$result = null;
 if($_POST['create_vote']) {
     $ch = curl_init();
     $data = [
@@ -28,7 +28,6 @@ if($_POST['create_vote']) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
     $result = curl_exec($ch);
-    print_r($result);
 }
 
 ?>
@@ -41,11 +40,15 @@ if($_POST['create_vote']) {
                 Click on the button to get a test vote link
             </div>
             <form action="index.php" method="post">
-                <button type="submit" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                <button type="submit" value="create_vote" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                     Create Vote Link
                 </button>
             </form>
-
+            <?php
+                if (!empty($result)){
+                    print_r($result);
+                }
+            ?>
 
 
         </div>
