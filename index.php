@@ -11,7 +11,7 @@
 
 <?php
 $result = null;
-if($_POST['create_vote']) {
+if($_POST) {
     $ch = curl_init();
     $data = [
         'token' => 'kmTEmpnYu8IxPFFzDbFMxgdiPFIDXYyUcg5zUPVbQdvNzuJm1OguX3UiRPeV',
