@@ -9,6 +9,7 @@
     <div class="min-h-screen flex items-center">
         <div class="bg-white p-6">
             Welcome on GameList Vote Script Test
+            
         </div>
     </div>
 </body>
