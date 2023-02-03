@@ -10,7 +10,7 @@
 </head>
 
 <?php
-$result = null;
+
 if($_POST['create_vote']) {
     $ch = curl_init();
     $data = [
