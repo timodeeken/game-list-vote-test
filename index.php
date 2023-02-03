@@ -55,15 +55,17 @@ if(!empty($_POST['post_value'])) {
                     <a target="_blank" href="<?php echo $result->url ?>" class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         Vote Now
                     </a>
-                    <div class="bg-gray-900 text-white p-3 mb-5">
-                        <code lang="php">
+                <?php } ?>
+            </div>
+            <?php if (!empty($result)){ ?>
+            <div class="bg-gray-900 text-white p-3 mb-5">
+                <code lang="php">
                   <pre>
 <?php print_r($result) ?>
                   </pre>
-                        </code>
-                    </div>
-                <?php } ?>
+                </code>
             </div>
+            <?php } ?>
         </div>
 
         <div class="bg-white p-6 rounded w-1/2 shadow-lg mb-5">
